@@ -1,3 +1,4 @@
+#variaveis globais
 VitoriasPC = 0
 VitoriasJogador = 0
 
@@ -13,7 +14,7 @@ def verificaQuemComeca(n, m):
   else:
     return 1 #computador começa
 
-def placar(vitoriasPc, vitoriasJogador):
+def imprimePlacar(vitoriasPc, vitoriasJogador):
   print("Placar: Você:", vitoriasJogador, "x", vitoriasPc, "Computador")
 
 def computador_escolhe_jogada(m, n):
@@ -60,6 +61,7 @@ def vitoriaPC():
   print("Fim do jogo! O computador ganhou!\n")
 def vitoriaJogador():
   print("Fim de jogo! Você ganhou!\n")
+
 def sequencia1(m, n):
   retiradasPC = computador_escolhe_jogada(m,n)
   n = n - retiradasPC
@@ -137,12 +139,13 @@ def partida():
     else:
       print("\nVocê começa!\n")
       sequencia2(m, n)
+    
     partidaAtual += 1
 
   if totalPartidas > 1:
     print("**** Final do Campeonato ****\n")
     global VitoriasPC
     global VitoriasJogador
-    placar(VitoriasPC, VitoriasJogador)
+    imprimePlacar(VitoriasPC, VitoriasJogador)
 
-partida();
+partida()
