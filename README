@@ -1,0 +1,8 @@
+O jogo do NIM consiste em um tabuleiro com N peças, onde um jogador disputa com o algoritmo o seguinte jogo:
+Cada jogador pode retirar no máximo M peças e no mínimo 1 peça por vez. Aquele que retirar as ultimas peças vence.
+
+O objetivo do algoritmo é sempre vencer, então na lógica implementada, ele verifica qual é o valor de M e N.
+Assim, ele decide se começa ou permite que o jogador comece, garatindo assim que, no final, o computador retire as ultimas peças.
+Caso N seja divisível por M+1, o jogador começa, senão o computador começa.
+A partir desse momento, o objetivo do algoritmo para ganhar consiste em deixar sempre um número de peças que seja múltiplo de
+m+1 ao jogador. Caso isso não seja possível, ele retira o máximo de peças possível.
