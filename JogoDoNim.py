@@ -3,6 +3,7 @@ VitoriasPC = 0
 VitoriasJogador = 0
 
 def tipoPartida():
+  #Em um campeonato, ocorrem 3 partidas e vence quem ganhar a maior quantidade
   print("\nBem-vindo ao jogo do NIM! Escolha: ")
   print("\n1 - para jogar uma partida isolada")
   escolha = int(input("2 - para jogar um  campeonato "))
@@ -18,6 +19,13 @@ def imprimePlacar(vitoriasPc, vitoriasJogador):
   print("Placar: Você:", vitoriasJogador, "x", vitoriasPc, "Computador")
 
 def computador_escolhe_jogada(m, n):
+  """
+    Se a quantidade de peças restantes no tabuleiro for menor ou igual
+  ao máximo que pode ser retirado, ele retira todas (e vence)
+    Senão, vai tentar retirar uma quantidade de peças que mantenha a regra de que
+  deve ficar disponivel para o jogador sempre uma quantidade n que seja multipla
+  de m+1.
+  """
   contador = m
   if n <= m:
     return n
@@ -27,7 +35,8 @@ def computador_escolhe_jogada(m, n):
         return contador
       else:
         contador = contador - 1
-    return m;
+    #Caso nao encontre um valor ideal, ele vai retirar uma peça
+    return m
   
 def usuario_escolhe_jogada(m, n):
   valido = False
@@ -59,6 +68,7 @@ def imprimeSobra(n):
 
 def vitoriaPC():
   print("Fim do jogo! O computador ganhou!\n")
+
 def vitoriaJogador():
   print("Fim de jogo! Você ganhou!\n")
 
@@ -127,8 +137,8 @@ def partida():
 
   while (partidaAtual <= totalPartidas):
     print("\n**** Rodada", partidaAtual,"****\n")
-    n = int(input("Quantas peças? "))
-    m = int(input("Limite de peças por jogada? "))
+    n = int(input("Quantas peças no tabuleiro? "))
+    m = int(input("Limite de peças retiradas por jogada? "))
   
     quemComeca = verificaQuemComeca(n, m)
   
