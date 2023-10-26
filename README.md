@@ -18,9 +18,15 @@ O Jogo do NIM é um jogo de estratégia simples em que dois jogadores retiram pe
 
 1. Clone este repositório em sua máquina local.
 
+git clone https://github.com/TiaoVenanincio/JogoDoNim.git
+
 2. Navegue até o diretório onde o código foi clonado.
 
+cd seu-repositorio
+
 3. Execute o jogo.
+
+python JogoDoNim.py
 
 4. Siga as instruções para escolher o tipo de partida (isolada ou campeonato) e defina as configurações iniciais.
 
